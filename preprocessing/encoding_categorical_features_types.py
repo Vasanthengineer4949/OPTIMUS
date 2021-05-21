@@ -17,7 +17,7 @@ def labelEncoding(df, feature):
 # Count or Frequency Encoding
 def countEncoding(df, feature):
     feature_map = df[feature].value_counts().to_dict()
-    df['Country'] = df[feature].map(feature_map)
+    df[feature] = df[feature].map(feature_map)
 # Count or Frequency Encoding
 
 # Target Guided Ordinal Encoding

@@ -181,7 +181,7 @@ def transformFeatures(df):
                     for feature in continuous_feature:
                         distPlot(df, feature)
                 elif "specific" in qqplot_all_or_specific:
-                    feature = input("Enter the correct name of the feature to be handled")
+                    feature = input("Enter the correct name of the feature to be plotted")
                     try:
                         qqPlot(df, feature)
                     except Exception:

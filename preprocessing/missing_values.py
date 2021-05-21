@@ -74,6 +74,7 @@ def missing_values_handling(df):
         fill_missing_type_continuous = input("How do u want to handle continuous missing values features:"
                                  "\nMean imputation-1\nMedian imputation-2\nRandom Sample Imputation-3\n"
                                  "End of Distribution Imputation-4\n")
+
         if "1" in fill_missing_type_continuous:
             missing_handling_for_all = input("Do you want to implement this handling to all feature or specific feature\n")
             if "all" in missing_handling_for_all:
@@ -85,6 +86,7 @@ def missing_values_handling(df):
                     missing_values_handling_types.meanImputation(df, feature)
                 except Exception:
                     print("Please check the feature name")
+
         if "2" in fill_missing_type_continuous:
             missing_handling_for_all = input("Do you want to implement this handling to all feature or specific feature\n")
             if "all" in missing_handling_for_all:
@@ -96,6 +98,7 @@ def missing_values_handling(df):
                     missing_values_handling_types.medianImputation(df, feature)
                 except Exception:
                     print("Please check the feature name")
+
         if "3" in fill_missing_type_continuous:
             missing_handling_for_all = input("Do you want to implement this handling to all feature or specific feature\n")
             if "all" in missing_handling_for_all:
@@ -107,6 +110,7 @@ def missing_values_handling(df):
                     missing_values_handling_types.randomSampleImputation(df, feature)
                 except Exception:
                     print("Please check the feature name")
+
         if "4" in fill_missing_type_continuous:
             missing_handling_for_all = input("Do you want to implement this handling to all feature or specific feature\n")
             if "all" in missing_handling_for_all:
@@ -154,6 +158,7 @@ def missing_values_handling(df):
                     missing_values_handling_types.frequentCategoryImputation(df, feature)
                 except Exception:
                     print("Please check the feature name")
+
         if "2" in fill_missing_type_categorical:
             missing_handling_for_all = input("Do you want to implement this handling to all feature or specific feature\n")
             if "all" in missing_handling_for_all:
@@ -165,6 +170,7 @@ def missing_values_handling(df):
                     missing_values_handling_types.captureNaNwithFeatureImputation(df, feature)
                 except Exception:
                     print("Please check the feature name")
+
         if "3" in fill_missing_type_categorical:
             missing_handling_for_all = input("Do you want to implement this handling to all feature or specific feature\n")
             if "all" in missing_handling_for_all:

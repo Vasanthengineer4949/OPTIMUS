@@ -1,19 +1,20 @@
+import numpy as np
 import pandas as pd
 
 def normalization(df, feature):
     from sklearn.preprocessing import MinMaxScaler
     normalScaler = MinMaxScaler()
-    normalScaler.fit_transform(df[feature])
+    df[feature] = normalScaler.fit_transform(np.array(df[feature]).reshape(-1, 1))
 
 def standardization(df, feature):
     from sklearn.preprocessing import StandardScaler
     standardScaler = StandardScaler()
-    standardScaler.fit_transform(df[feature])
+    df[feature] = standardScaler.fit_transform(np.array(df[feature]).reshape(-1, 1))
 
 def robustScaling(df, feature):
     from sklearn.preprocessing import RobustScaler
     robustScaler = RobustScaler()
-    robustScaler.fit_transform(df[feature])
+    df[feature] = robustScaler.fit_transform(np.array(df[feature]).reshape(-1, 1))
 
 def logarithmic(df, feature):
     import numpy as np
@@ -29,5 +30,9 @@ def square(df, feature):
     df[feature] = df[feature] ** 0.5
 
 def boxcox(df, feature):
-    from scipy import stats as stats
-    df[feature], param = stats.boxcox(df[feature] + 1)
+    try:
+        from scipy import stats as stats
+        df[feature], param = stats.boxcox(df[feature])
+    except ValueError:
+        print("U have negative or else constant value in your data."
+              " So this method cannot be used. Try another method")

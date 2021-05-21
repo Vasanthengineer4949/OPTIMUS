@@ -32,7 +32,7 @@ def encodingCategoricalValues(df):
         elif "specific" in encoding_type_for_all:
             feature = input("Enter the correct name of the feature to be encoded")
             try:
-                encoding_categorical_features_types.labelEncodingEncoding(df, feature)
+                encoding_categorical_features_types.labelEncoding(df, feature)
             except Exception:
                 print("Please check the feature name")
     elif "3" in encoding_type:
